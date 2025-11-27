@@ -23,7 +23,7 @@ if os.path.exists(dir):
     shutil.rmtree(dir)
 os.makedirs(dir, exist_ok=True)
 
-for value in values[2:]:
+for value in values:
     url = 'https://sfedu.ru/www/stat_pages22.show?p=STD/rasp/D&params=(p_es_id=%3E'+value+',p_tf_id=%3E1)'
     responce = requests.get(url)
     responce.raise_for_status()
