@@ -23,7 +23,7 @@ if os.path.exists(dir):
     shutil.rmtree(dir)
 os.makedirs(dir, exist_ok=True)
 
-for value in values:
+for value in values[2:]:
     url = 'https://sfedu.ru/www/stat_pages22.show?p=STD/rasp/D&params=(p_es_id=%3E'+value+',p_tf_id=%3E1)'
     responce = requests.get(url)
     responce.raise_for_status()
@@ -31,7 +31,7 @@ for value in values:
     soup = BeautifulSoup(responce.text, 'html.parser')
 
     raw_name = soup.find("option", attrs={"value": value}).text
-    dir_name = re.sub(r'[<>:"/\\|?*]', '_', raw_name)
+    dir_name = re.sub(r'[<>:"/\\|?*]', '_', raw_name).strip()
 
     folder_path = os.path.join(dir, dir_name)
     os.makedirs(folder_path, exist_ok=True)
@@ -50,6 +50,8 @@ for value in values:
                 filename = filename.encode('latin1').decode('cp1251')
             except UnicodeDecodeError:
                 filename = filename
+
+        filename = re.sub(r'[<>:"/\\|?*]', '_', filename).strip()
 
         full_path = os.path.join(folder_path, filename)
         with open(full_path, "wb") as file:
