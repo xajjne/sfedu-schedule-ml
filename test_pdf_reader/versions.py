@@ -1,0 +1,3 @@
+import transformers
+print(transformers.__version__)
+from transformers import AutoProcessor, LightOnOCRForConditionalGeneration
