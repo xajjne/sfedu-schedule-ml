@@ -1,0 +1,23 @@
+torch>=2.4
+torchvision>=0.19
+pillow>=10.0
+transformers @ git+https://github.com/baptiste-aubertin/transformers.git@main
+accelerate>=0.34
+safetensors>=0.4
+pdf2image>=1.17
+langchain>=0.3
+langgraph>=0.2
+langgraph-prebuilt>=1.0
+langchain-ollama>=0.1
+requests>=2.32
+orjson>=3.10
+vllm==0.11.2
+pypdfium2 
+pillow 
+requests
+bs4
+
+# + скачать poppler-utils с архива
+# + скачать Ollama https://ollama.com/download
+
+# pip install -r ./requirements.txt

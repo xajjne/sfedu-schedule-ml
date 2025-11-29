@@ -22,8 +22,7 @@ model.eval()
 def ocr_pil_image(image: Image.Image) -> str:
     image = image.convert("RGB")
 
-    # уменьшение размера страницы
-    max_width = 1200          
+    max_width = 1200
     w, h = image.size
     if w > max_width:
         new_h = int(h * max_width / w)
@@ -58,18 +57,17 @@ def ocr_pil_image(image: Image.Image) -> str:
     return generated_text
 
 
-def ocr_pdf(pdf_path: str):
-    # понижение dpi
+def ocr_pdf_to_text(pdf_path: str) -> str:
     pages = convert_from_path(
         pdf_path,
         poppler_path=POPPLER_PATH,
-        dpi=150,         
+        dpi=150,
     )
-
-    for i, page in enumerate(pages, start=1):
-        print(f"\n=== Страница {i} ===")
-        print(ocr_pil_image(page))
+    texts = []
+    for page in pages:
+        texts.append(ocr_pil_image(page))
+    return "\n\n".join(texts)
 
 
 if __name__ == "__main__":
-    ocr_pdf(PDF_PATH)
+    print(ocr_pdf_to_text(PDF_PATH))
