@@ -1,6 +1,6 @@
 import torch
 from PIL import Image
-from transformers import AutoProcessor, AutoModelForCausalLM
+from transformers import AutoProcessor, LightOnOCRForConditionalGeneration
 from pdf2image import convert_from_path
 
 PDF_PATH = r"vladick.pdf"
@@ -10,7 +10,7 @@ model_id = "lightonai/LightOnOCR-1B-1025"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 processor = AutoProcessor.from_pretrained(model_id)
-model = AutoModelForCausalLM.from_pretrained(
+model = LightOnOCRForConditionalGeneration.from_pretrained(
     model_id,
     dtype=torch.bfloat16 if device == "cuda" else torch.float32,
     device_map=device,
@@ -21,6 +21,13 @@ model.eval()
 
 def ocr_pil_image(image: Image.Image) -> str:
     image = image.convert("RGB")
+
+    # уменьшение размера страницы
+    max_width = 1200          
+    w, h = image.size
+    if w > max_width:
+        new_h = int(h * max_width / w)
+        image = image.resize((max_width, new_h), Image.BILINEAR)
 
     messages = [{"role": "user", "content": [{"type": "image"}]}]
     text = processor.apply_chat_template(
@@ -52,7 +59,13 @@ def ocr_pil_image(image: Image.Image) -> str:
 
 
 def ocr_pdf(pdf_path: str):
-    pages = convert_from_path(pdf_path, poppler_path=POPPLER_PATH)
+    # понижение dpi
+    pages = convert_from_path(
+        pdf_path,
+        poppler_path=POPPLER_PATH,
+        dpi=150,         
+    )
+
     for i, page in enumerate(pages, start=1):
         print(f"\n=== Страница {i} ===")
         print(ocr_pil_image(page))
