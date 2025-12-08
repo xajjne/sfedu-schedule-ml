@@ -1,18 +1,20 @@
-import os
-
-from langgraph.prebuilt import create_react_agent
+import json
 from langchain_ollama import ChatOllama
+from langgraph.prebuilt import create_react_agent
 
-from ocr_lighton import ocr_pdf_to_text, PDF_PATH  
+from ocr_lighton import ocr_pdf_to_text, PDF_PATH
 from prompts import SCHEDULE_AGENT_PROMPT
 
+
 llm = ChatOllama(
-    model="llama3.2:3b",          
+    model="llama3.2:3b",
     base_url="http://localhost:11434",
     temperature=0.2,
 )
 
-def get_schedule_from_pdf(pdf_path: str) -> str:
+
+def get_schedule_from_pdf() -> str:
+    """Инструмент: вернуть текст расписания из PDF через LightOnOCR."""
     return ocr_pdf_to_text(PDF_PATH)
 
 
@@ -21,6 +23,7 @@ agent = create_react_agent(
     tools=[get_schedule_from_pdf],
     prompt=SCHEDULE_AGENT_PROMPT,
 )
+
 
 if __name__ == "__main__":
     result = agent.invoke(
@@ -34,6 +37,14 @@ if __name__ == "__main__":
                     ),
                 }
             ]
-        },
+        }
     )
-    print(result["messages"][-1]["content"])
+    
+    output_text = result["messages"][-1].content
+
+    print(output_text)
+    
+    with open("schedule_output.json", "w", encoding="utf-8") as f:
+        f.write(output_text)
+    
+    print("\n✅ Результат сохранён в schedule_output.json")

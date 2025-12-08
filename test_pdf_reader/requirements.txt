@@ -16,8 +16,13 @@ pypdfium2
 pillow 
 requests
 bs4
+langchain-openai
+langchain-core
+
 
 # + скачать poppler-utils с архива
 # + скачать Ollama https://ollama.com/download
+#    ---     ollama run llama3.2:3b       ---    behind start parse
+
 
 # pip install -r ./requirements.txt

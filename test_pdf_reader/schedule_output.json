@@ -1,0 +1,456 @@
+{
+  "schedule": {
+    "Модуль 1 (01.09.25 - 07.09.25)": {
+      "ПОНЕДЕЛЬНИК": {
+        "Группа 2.2": [
+          {
+            "time": "8:00–9:35",
+            "subject": "Теория и практика управления",
+            "type": "л",
+            "instructor": "Ласкова Т.С.",
+            "room": "118"
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": "Монетарная экономика и теория финансов",
+            "type": "л",
+            "instructor": "Полховская Т.Ю.",
+            "room": "118"
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": "С 6.10 Экономика фирмы",
+            "type": "л",
+            "instructor": "Ермишина А.В.",
+            "room": "405"
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ],
+        "Группа 2.3": [
+          {
+            "time": "8:00–9:35",
+            "subject": "Безопасность жизнедеятельности",
+            "type": "с",
+            "instructor": "Толстокора О.Н.",
+            "room": "217"
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": "Теория и практика управления",
+            "type": "с",
+            "instructor": "Карпова М.А.",
+            "room": "217"
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ],
+        "Группа 2.4": [
+          {
+            "time": "8:00–9:35",
+            "subject": "Теория и практика управления",
+            "type": "с",
+            "instructor": "Карпова М.А.",
+            "room": "218"
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": "Теория систем и системный анализ",
+            "type": "с",
+            "instructor": "Алексин В.В.",
+            "room": "218"
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ],
+        "Группа 2.5": [
+          {
+            "time": "8:00–9:35",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ],
+        "Группа 2.6": [
+          {
+            "time": "8:00–9:35",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ],
+        "Группа 2.1": [
+          {
+            "time": "8:00–9:35",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ]
+      }
+    },
+    "Модуль 2 (03.11.25 – 23.11.25)": {
+      "ПОНЕДЕЛЬНИК": {
+        "Группа 2.2": [
+          {
+            "time": "8:00–9:35",
+            "subject": "Теория и практика управления",
+            "type": "л",
+            "instructor": "Ласкова Т.С.",
+            "room": "118"
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": "Монетарная экономика и теория финансов",
+            "type": "л",
+            "instructor": "Полховская Т.Ю.",
+            "room": "118"
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": "С 6.10 Экономика фирмы",
+            "type": "л",
+            "instructor": "Ермишина А.В.",
+            "room": "405"
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ],
+        "Группа 2.3": [
+          {
+            "time": "8:00–9:35",
+            "subject": "Безопасность жизнедеятельности",
+            "type": "с",
+            "instructor": "Толстокора О.Н.",
+            "room": "217"
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": "Теория и практика управления",
+            "type": "с",
+            "instructor": "Карпова М.А.",
+            "room": "217"
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ],
+        "Группа 2.4": [
+          {
+            "time": "8:00–9:35",
+            "subject": "Теория и практика управления",
+            "type": "с",
+            "instructor": "Карпова М.А.",
+            "room": "218"
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": "Теория систем и системный анализ",
+            "type": "с",
+            "instructor": "Алексин В.В.",
+            "room": "218"
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ],
+        "Группа 2.5": [
+          {
+            "time": "8:00–9:35",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ],
+        "Группа 2.6": [
+          {
+            "time": "8:00–9:35",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ],
+        "Группа 2.1": [
+          {
+            "time": "8:00–9:35",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "9:50–11:25",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "10:40–12:15",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "11:55–13:30",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          },
+          {
+            "time": "12:45–14:20",
+            "subject": null,
+            "type": null,
+            "instructor": null,
+            "room": null
+          }
+        ]
+      }
+    }
+  }
+}

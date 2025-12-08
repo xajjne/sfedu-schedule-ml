@@ -1,4 +1,5 @@
 import torch
+import os
 from PIL import Image
 from transformers import AutoProcessor, LightOnOCRForConditionalGeneration
 from pdf2image import convert_from_path
@@ -67,6 +68,12 @@ def ocr_pdf_to_text(pdf_path: str) -> str:
     for page in pages:
         texts.append(ocr_pil_image(page))
     return "\n\n".join(texts)
+
+    with open("vladick_ocr_output.txt", "w", encoding="utf-8") as f:
+        f.write(result)
+    print("💾 Текст сохранён в vladick_ocr_output.txt")
+    
+    return result
 
 
 if __name__ == "__main__":
