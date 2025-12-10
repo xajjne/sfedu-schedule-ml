@@ -1,10 +1,12 @@
 import torch
 import os
+import re
 from PIL import Image
 from transformers import AutoProcessor, LightOnOCRForConditionalGeneration
 from pdf2image import convert_from_path
 
 PDF_PATH = r"vladick.pdf"
+CACHE_PATH = r"ocr_cache_version2.txt"
 POPPLER_PATH = r"C:\Users\sanya\AppData\Roaming\Python\Python313\Scripts\poppler-25.11.0\Library\bin"
 
 model_id = "lightonai/LightOnOCR-1B-1025"
@@ -58,23 +60,54 @@ def ocr_pil_image(image: Image.Image) -> str:
     return generated_text
 
 
+def postprocess_ocr_text(text: str) -> str:
+    lines = text.split('\n')
+    processed_lines = []
+    
+    for line in lines:
+        if not line.strip():
+            continue
+            
+        if re.search(r'Группа\s+\d+\.\d+.*Группа\s+\d+\.\d+', line):
+            processed_lines.append(f"[ОБЪЕДИНЁННАЯ ПАРА] {line}")
+            continue
+        
+        if re.search(r'^\s*[-–—]\s*$', line) or line.strip() == '':
+            processed_lines.append("[ОКНО В РАСПИСАНИИ]")
+            continue
+            
+        processed_lines.append(line)
+    
+    return '\n'.join(processed_lines)
+
+
 def ocr_pdf_to_text(pdf_path: str) -> str:
+    print(" Запускаю OCR ...")
     pages = convert_from_path(
         pdf_path,
         poppler_path=POPPLER_PATH,
         dpi=150,
     )
+    
     texts = []
-    for page in pages:
-        texts.append(ocr_pil_image(page))
-    return "\n\n".join(texts)
-
-    with open("vladick_ocr_output.txt", "w", encoding="utf-8") as f:
+    for i, page in enumerate(pages, start=1):
+        print(f"Обработка страницы {i}/{len(pages)}...")
+        raw_text = ocr_pil_image(page)
+        
+        processed_text = postprocess_ocr_text(raw_text)
+        
+        texts.append(f"=== СТРАНИЦА {i} ===\n{processed_text}")
+    
+    result = "\n\n".join(texts)
+    
+    with open(CACHE_PATH, "w", encoding="utf-8") as f:
         f.write(result)
-    print("💾 Текст сохранён в vladick_ocr_output.txt")
+    print(f"💾 Текст сохранён в {CACHE_PATH}")
     
     return result
 
 
 if __name__ == "__main__":
-    print(ocr_pdf_to_text(PDF_PATH))
+    final_text = ocr_pdf_to_text(PDF_PATH)
+    print("\n" + "="*50)
+    print(final_text[:2000])
